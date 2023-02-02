@@ -17,6 +17,7 @@
 .button-x {
   background-color: #444;
   border: none;
-  font-size: 16px;
+  font-size: 24px;
   color: #f6ff00;
+  cursor: pointer;
 }
