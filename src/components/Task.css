@@ -9,3 +9,14 @@
   align-items: center;
   cursor: pointer;
 }
+
+.task-tarefa {
+  cursor: pointer;
+}
+
+.button-x {
+  background-color: #444;
+  border: none;
+  font-size: 16px;
+  color: #f6ff00;
+}

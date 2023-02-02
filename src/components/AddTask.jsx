@@ -11,6 +11,7 @@ const AddTask = ({ handleTaskAdd }) => {
 
   const handleTaskAddClick = () => {
     handleTaskAdd(inputData);
+    setInputData('');
   };
 
   return (
