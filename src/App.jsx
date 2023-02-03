@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TaskDetails from './components/TaskDetails';
 
 import './App.css';
 import AddTask from './components/AddTask';
@@ -8,14 +9,15 @@ import Tasks from './components/Tasks';
 import Header from './components/Header';
 
 const App = () => {
-  const [tasks, setTask] = useState([
-    {
-      id: 1,
-      tarefa: 'Estudar programaçao',
-      completed: false,
-    },
-  ]);
+  const [tasks, setTask] = useState([]);
 
+  // [
+  //   {
+  //     id: 1,
+  //     tarefa: 'Estudar programaçao',
+  //     completed: false,
+  //   },
+  // ]
   const handleTaskId = (taskId) => {
     const newId = tasks.map((task) => {
       if (task.id === taskId) return { ...task, completed: !task.completed };
@@ -39,22 +41,26 @@ const App = () => {
     <Router>
       <div className='container'>
         <Header />
-        <Route
-          path='/'
-          exact
-          render={() => {
-            return (
+        <Routes>
+          <Route
+            path='/'
+            element={
               <>
                 <AddTask handleTaskAdd={handleTaskAdd} />
                 <Tasks
                   tasks={tasks}
                   handleTaskId={handleTaskId}
                   handleRemoveTask={handleRemoveTask}
+                  exact
                 />
               </>
-            );
-          }}
-        />
+            }
+          />
+          <Route
+            path='/:taskTitle'
+            element={<TaskDetails />}
+          />
+        </Routes>
       </div>
     </Router>
   );

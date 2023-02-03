@@ -1,5 +1,5 @@
 .button-add-task {
-  background-color: rgb(246, 255, 0);
+  background-color: #f6ff00;
   height: 40px;
   padding: 0 10px;
   border-radius: 5px;
@@ -13,4 +13,9 @@
 
 .containar-button {
   margin-left: 10px;
+}
+
+.button-add-task:hover {
+  background-color: #444;
+  color: #f6ff00;
 }

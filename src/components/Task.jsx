@@ -1,7 +1,15 @@
 import React from 'react';
 import './Task.css';
+import { useNavigate } from 'react-router-dom';
+import { BsInfoCircle } from 'react-icons/bs';
 
 const Task = ({ task, handleTaskId, handleRemoveTask }) => {
+  const navigate = useNavigate();
+
+  const handleTaskDetailsClick = () => {
+    navigate('/taskTitle');
+  };
+
   return (
     <div
       className='task-container'
@@ -13,13 +21,24 @@ const Task = ({ task, handleTaskId, handleRemoveTask }) => {
       >
         {task.tarefa}
       </div>
+
       <div className='buttons-container'>
-        <button
-          className='button-x'
-          onClick={() => handleRemoveTask(task.id)}
-        >
-          x
-        </button>
+        <div>
+          <button
+            className='button-x'
+            onClick={handleTaskDetailsClick}
+          >
+            <BsInfoCircle />
+          </button>
+        </div>
+        <div>
+          <button
+            className='button-x'
+            onClick={() => handleRemoveTask(task.id)}
+          >
+            x
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -20,4 +20,13 @@
   font-size: 24px;
   color: #f6ff00;
   cursor: pointer;
+  margin: 0 10px;
+}
+
+.button-x:hover {
+  color: #f6ff0080;
+}
+
+.buttons-container {
+  display: flex;
 }

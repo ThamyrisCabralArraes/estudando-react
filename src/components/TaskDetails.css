@@ -1,0 +1,30 @@
+.task-detais-container {
+  background-color: #444;
+  color: #eee;
+  margin: 15px 0;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: none;
+}
+
+.task-detais-container h2 {
+  margin-bottom: 5px;
+  color: #f6ff00;
+}
+
+.back-button {
+  width: 30%;
+  margin-top: 15px;
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* .apagar-p {
+  color: #444;
+} */
